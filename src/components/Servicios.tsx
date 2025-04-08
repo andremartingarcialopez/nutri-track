@@ -16,13 +16,13 @@ const services = [
 export default function Servicios() {
     return (
         <>
-            <h2 className="text-5xl font-semibold my-5">Servicios</h2>
+            <h2 className="text-center lg:text-start text-5xl font-semibold my-5">Servicios</h2>
 
-            <div className="grid grid-cols-3 gap-10">
+            <div className="lg:grid grid-cols-3 gap-10">
                 {services.map(function (service) {
                     return (
                         <div
-                            className=" bg-cover bg-center h-64"
+                            className="bg-cover bg-center h-64"
                             style={{
                                 backgroundImage:
                                     `url(${service.image})`,

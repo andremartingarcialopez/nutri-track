@@ -16,7 +16,7 @@ function App() {
         <div className=" absolute inset-0">
           <header className="px-30 py-10">
             
-            <a className="flex gap-2.5 items-baseline" href="#">
+            <a className="flex flex-col md:flex-row justify-center lg:justify-start items-center  gap-2.5" href="#">
               <h1 className=" text-green-600 font-bold text-4xl text-shadow text-shadow-black ">NutriTracker</h1>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2">
                 <path d="M3 3m0 4a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
@@ -26,8 +26,8 @@ function App() {
           </header>
         </div>
 
-        <div className="absolute inset-0 h-full w-full  flex flex-col justify-center items-center mx-auto max-w-5xl">
-          <h2 className="text-white text-5xl text-center font-light leading-15 ">El Asesoramiento Nutricional Mas Confiable De La Ciudad</h2>
+        <div className="absolute inset-0 h-full w-full  flex flex-col justify-center items-center mx-auto max-w-5xl px-2">
+          <h2 className="text-white text-4xl md:text-5xl text-center font-light leading-15 ">El Asesoramiento Nutricional Mas Confiable De La Ciudad</h2>
           <button className="mt-15 text-2xl  px-8 py-2 text-white cursor-pointer hover:font-semibold hover:bg-white/30  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 ">Comieza a Contar tus Calorias</button>
         </div>
 
@@ -40,7 +40,7 @@ function App() {
       </section>
 
       <section>
-        <div className="mx-auto px-10 py-10">
+        <div className="mx-auto lg:px-10 py-10">
           <Servicios/>
         </div>
       </section>
