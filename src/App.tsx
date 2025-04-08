@@ -40,7 +40,7 @@ function App() {
       </section>
 
       <section>
-        <div className="mx-auto lg:px-10 py-10">
+        <div className="mx-auto lg:px-10 lg:py-10">
           <Servicios/>
         </div>
       </section>
