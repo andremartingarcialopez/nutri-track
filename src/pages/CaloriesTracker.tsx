@@ -28,7 +28,7 @@ export default function CaloriesTracker() {
       <section>
         <div className="mx-auto max-w-4xl my-5">
           <ListActivities
-          state ={state} />
+          activities={state?.activities || []} />
         </div>
       </section>
     </>

@@ -1,26 +1,26 @@
 import { useMemo } from "react"
-import { InitialStateType } from "../reducers/ActivityReducers"
 import { categories } from "../data/categories"
 import { Activity } from "../types/types"
 
 type ListActivitiesProps = {
-    state: InitialStateType
+    activities: Activity[],
+    
 }
 
-export function ListActivities({ state }: ListActivitiesProps) {
+export function ListActivities({ activities }: ListActivitiesProps) {
 
     const formartCategory = useMemo(() => (category: Activity["category"]) => {
         return categories.map(function (cat) {
             return cat.id == category ? cat.categoryName : ""
         })
-    },[state.activities])
+    },[activities])
 
     return (
         <>
 
             
-            {state.activities.length ? <h2 className="text-3xl font-bold text-center my-2 text-gray-600">Comidas y Actividades</h2> : <h2 className="text-2xl md:text-3xl font-bold text-center my-2 text-gray-600">Comienza a Registrar tus Comidas y Actividades</h2>  }
-            {state.activities.map(function (activity) {
+            {activities.length ? <h2 className="text-3xl font-bold text-center my-2 text-gray-600">Comidas y Actividades</h2> : <h2 className="text-2xl md:text-3xl font-bold text-center my-2 text-gray-600">Comienza a Registrar tus Comidas y Actividades</h2>  }
+            {activities.map(function (activity) {
                 return (
                     <>
                         <div className="border-t border-t-gray-700 p-4">
