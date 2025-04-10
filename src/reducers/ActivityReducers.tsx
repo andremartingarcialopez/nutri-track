@@ -1,24 +1,67 @@
 import { Activity } from "../types/types"
 
 export type ActivityActions = 
-    {type: "save-activity", payload: {newActivity: Activity}}
+    {type: "save-activity", payload: {newActivity: Activity}} |
+    {type: "edit-activity", payload: {id: Activity["id"]}} |
+    {type: "delete-activity", payload: {id: Activity["id"]}} |
+    {type: "reset-app"} 
 
 export type InitialStateType = {
     activities: Activity[]
+    id: Activity["id"]
+}
+
+function getLocalStorage(): Activity[] {
+    const activitiesLocal = localStorage.getItem("activities")
+    return activitiesLocal ? JSON.parse(activitiesLocal) : []
+    
 }
 
 export const initialState: InitialStateType = {
-    activities:[]
+    activities: getLocalStorage(),
+    id: ""
 }
 
 
 export function activityReducers(state: InitialStateType = initialState, action: ActivityActions) {
     
     if (action.type == "save-activity") {
-        console.log("Salvando Activity")
+        
+        let activitiesUpdates:Activity[] = []
+        if (state.id) {
+            activitiesUpdates = state.activities.map(act => act.id == state.id ? action.payload.newActivity : act)
+        }else{
+            console.log("Nuevo")
+            activitiesUpdates = [ ...state.activities, action.payload.newActivity]
+        }
 
         return {
-            ...state, activities:[ ...state.activities, action.payload.newActivity]
+            ...state, activities:activitiesUpdates, id: ""
         }
     }
+
+    if (action.type == "edit-activity") {
+
+        return {
+            ...state, id: action.payload.id
+        }
+    }
+
+    if (action.type == "delete-activity") {
+
+        const deleteAct: Activity[] = state.activities.filter(act => act.id !== action.payload.id);
+        
+        return {
+            ...state, activities:deleteAct
+        }
+    }
+
+    if (action.type == "reset-app") {
+        
+        return{
+            activities: [], id: ""
+        }
+    }
+
+    return state
 }

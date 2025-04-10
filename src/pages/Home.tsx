@@ -15,11 +15,11 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/30"></div>
 
                 <div className=" absolute inset-0">
-                    <header className="px-30 py-10">
+                    <header className=" z-100 fixed  w-full bg-gray-400/30 rounded-md backdrop-blur-sm bg-opacity-10 border-b border-b-gray-100">
 
-                        <Link to={"/"} className="flex flex-col md:flex-row justify-center lg:justify-start items-center  gap-2.5">
-                            <h1 className=" text-green-600 font-bold text-4xl text-shadow text-shadow-black ">NutriTracker</h1>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" width="40" height="40" strokeWidth="2">
+                        <Link to={"/"} className="flex flex-col md:flex-row justify-center lg:justify-start items-center  gap-2.5 p-5 mx-auto max-w-4xl">
+                            <h1 className=" text-white font-bold text-4xl text-shadow text-shadow-black ">NutriTracker</h1>
+                            <svg className=" hidden md:flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" width="40" height="40" strokeWidth="2">
                                 <path d="M3 3m0 4a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path>
                                 <path d="M12 7c1.956 0 3.724 .802 5 2.095l-2.956 2.904a3 3 0 0 0 -2.038 -.799a3 3 0 0 0 -2.038 .798l-2.956 -2.903a6.979 6.979 0 0 1 5 -2.095z"></path>
                             </svg>

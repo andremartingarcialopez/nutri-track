@@ -1,14 +1,15 @@
-import { useState } from "react"
+import {  useEffect, useState } from "react"
 import { categories } from "../data/categories"
-import { ActivityActions } from "../reducers/ActivityReducers";
+import { ActivityActions, InitialStateType } from "../reducers/ActivityReducers";
 import { v4 as uuid } from "uuid";
 import { Activity } from "../types/types";
 
 type FormProps = {
     dispatch: React.ActionDispatch<[action: ActivityActions]>
+    state: InitialStateType 
 }
 
-export function Form({dispatch}: FormProps) {
+export function Form({dispatch, state}: FormProps) {
 
     const initialStateActivity: Activity = {
         id: uuid(),
@@ -17,7 +18,14 @@ export function Form({dispatch}: FormProps) {
         calories: 0
     }
 
-    const [activity, setActivity] = useState(initialStateActivity);
+    const [activity, setActivity] = useState<Activity>(initialStateActivity);
+
+    useEffect(() => {
+        if (state.id) {
+            const activityFilter = state.activities.filter(act => act.id == state.id)[0]
+            setActivity(activityFilter);
+        }
+    },[state.id])
 
     
 
@@ -40,7 +48,6 @@ export function Form({dispatch}: FormProps) {
 
     function addActivity(e:React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        console.log("Agregando")
         dispatch({type: "save-activity", payload: {newActivity: activity}})
         setActivity(initialStateActivity)
     }
