@@ -56,6 +56,7 @@ export function Form({dispatch, state}: FormProps) {
         <>
             <div className="mx-auto max-w-4xl flex justify-center items-center h-[100%]">
                 <form onSubmit={addActivity} className=" p-10 rounded-2xl  bg-clip-padding backdrop-filter backdrop-blur-xs bg-opacity-10 border border-gray-100 w-full mx-2 bg-black/10">
+                <legend className="text-center font-semibold text-white md:text-3xl">Completa el formulario para hacer tu registro</legend>
 
                     <div className="my-5">
                         <label className="text-white font-bold p-2" htmlFor="category">Categoria:</label>
@@ -69,7 +70,7 @@ export function Form({dispatch, state}: FormProps) {
                     </div>
 
                     <div className="my-5">
-                        <label className="text-white font-bold p-2" htmlFor="activityName">Actividad:</label>
+                        <label className="text-white font-bold p-2" htmlFor="activityName">{`${activity.category == 1 ? `Platillo` : `Actividad`}`}:</label>
                         <input id="activityName" className="w-full border text-white border-white p-2 rounded-xl font-bold" type="text" placeholder="Ej. Correr, Tacos, Pesas, Enchiladas" value={activity.activityName} onChange={handleChange} />
                     </div>
 

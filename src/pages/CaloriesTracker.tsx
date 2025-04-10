@@ -2,23 +2,24 @@ import { useReducer } from "react";
 import { Form } from "../components/Form";
 import { ListActivities } from "../components/ListActivities";
 import { activityReducers, initialState } from "../reducers/ActivityReducers";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Tracker from "../components/Tracker";
 
 
 export default function CaloriesTracker() {
 
   const [state, dispatch] = useReducer(activityReducers, initialState)
 
-  localStorage.setItem("activities",JSON.stringify(state?.activities))
+  localStorage.setItem("activities", JSON.stringify(state?.activities))
 
   function buttonDisabled() {
     if (state?.activities.length) {
       return true
-    }else{
+    } else {
       return false
     }
   }
-  
+
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function CaloriesTracker() {
             </svg>
           </Link>
 
-          <button disabled={!buttonDisabled()}  onClick={() => dispatch( {type: "reset-app"} )} className="backdrop-blur-xs border rounded-xl font-bold border-gray-100  bg-black/10 text-white px-4 py-2 hover:bg-white/50 hover:cursor-pointer hover:text-black disabled:cursor-not-allowed text-sm md:text-lg  disabled:bg-black/10 disabled:text-white">Reiniciar</button>
+          <button disabled={!buttonDisabled()} onClick={() => dispatch({ type: "reset-app" })} className="backdrop-blur-xs border rounded-xl font-bold border-gray-100  bg-black/10 text-white px-4 py-2 hover:bg-white/50 hover:cursor-pointer hover:text-black disabled:cursor-not-allowed text-sm md:text-lg  disabled:bg-black/10 disabled:text-white">Reiniciar</button>
         </div>
       </header>
 
@@ -41,16 +42,24 @@ export default function CaloriesTracker() {
         <div className="h-full">
           <Form
             dispatch={dispatch}
-            state ={state} />
+            state={state} />
         </div>
 
+      </section>
+
+      <section className="bg-gray-900/50 p-10">
+        <div className="mx-auto max-w-4xl">
+          <Tracker 
+          state = {state}
+          />
+        </div>
       </section>
 
       <section>
         <div className="mx-auto max-w-4xl my-5">
           <ListActivities
             activities={state?.activities || []}
-            dispatch= {dispatch} />
+            dispatch={dispatch} />
         </div>
       </section>
     </>

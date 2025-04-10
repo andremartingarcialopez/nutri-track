@@ -27,20 +27,20 @@ export function ListActivities({ activities, dispatch }: ListActivitiesProps) {
                 return (
 
                     <div key={activity.id} className="flex justify-between items-center border-t border-t-gray-700 p-4">
-                        <div className="">
-                            <p className={`${activity.category == 1 ? `bg-yellow-500` : `bg-orange-500`} w-fit px-4 text-center py-1 font-semibold`}> {formartCategory(activity.category)} </p>
-                            <p className="text-3xl font-black text-gray-700">{activity.activityName}</p>
-                            <p className={`text-3xl text-shadow-2xs text-shadow-gray-700  font-bold ${activity.category == 1 ? `text-yellow-500` : `text-orange-500`}`}>{activity.calories} Calorias</p>
+                        <div>
+                            <p className={`${activity.category == 1 ? `bg-yellow-500` : `bg-orange-500`} w-fit px-2 text-center py-1 font-semibold`}> {formartCategory(activity.category)} </p>
+                            <p className="text-2xl md:text-3xl font-black text-gray-700">{activity.activityName}</p>
+                            <p className={`text-2xl md:text-3xl text-shadow-2xs text-shadow-gray-700  font-bold ${activity.category == 1 ? `text-yellow-500` : `text-orange-500`}`}>{activity.calories} Calorias</p>
                         </div>
 
 
                         <div className="flex gap-4">
                             <button onClick={() => dispatch({ type: "edit-activity", payload: { id: activity.id } })}>
-                                <PencilSquareIcon className={`w-10 h-10 cursor-pointer text-gray-700 ${activity.category == 1 ? `hover:text-yellow-500` : `hover:text-orange-500`}`} />
+                                <PencilSquareIcon className={`w-8 h-8 md:w-10 md:h-10 cursor-pointer text-gray-700 ${activity.category == 1 ? `hover:text-yellow-500` : `hover:text-orange-500`}`} />
                             </button>
 
                             <button>
-                                <XCircleIcon onClick={() => dispatch({type: "delete-activity", payload: {id: activity.id}})} className={`w-10 h-10 cursor-pointer text-gray-700 hover:text-red-500`} />
+                                <XCircleIcon onClick={() => dispatch({type: "delete-activity", payload: {id: activity.id}})} className={` w-8 h-8 md:w-10 md:h-10 cursor-pointer text-gray-700 hover:text-red-500`} />
                             </button>
                         </div>
                     </div>
