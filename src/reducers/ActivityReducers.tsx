@@ -42,6 +42,11 @@ export function activityReducers(state: InitialStateType = initialState, action:
 
     if (action.type == "edit-activity") {
 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Esto hace que el scroll sea animado
+          });
+
         return {
             ...state, id: action.payload.id
         }

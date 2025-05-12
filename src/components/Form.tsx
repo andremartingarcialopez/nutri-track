@@ -80,7 +80,7 @@ export function Form({dispatch, state}: FormProps) {
                     </div>
 
                     <div className="flex w-full">
-                        <input type="submit" className="backdrop-blur-xs border font-bold border-gray-100 w-full bg-black/10 text-white p-2 hover:bg-white/50 hover:cursor-pointer hover:text-black disabled:cursor-not-allowed disabled:bg-black/10 disabled:text-white" value={"Enviar"} disabled={validateForm()} />
+                        <input type="submit" className="backdrop-blur-xs border font-bold border-gray-100 w-full bg-black/10 text-white p-2 hover:bg-white/50 hover:cursor-pointer hover:text-black disabled:cursor-not-allowed disabled:bg-black/10 disabled:text-white" value={state.id ? "Editar " : "Agregar"} disabled={validateForm()} />
                     </div>
                 </form>
             </div>

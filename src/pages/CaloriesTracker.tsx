@@ -47,8 +47,8 @@ export default function CaloriesTracker() {
 
       </section>
 
-      <section className="bg-gray-900/50 p-10">
-        <div className="mx-auto max-w-4xl">
+      <section className="">
+        <div className="">
           <Tracker 
           state = {state}
           />
