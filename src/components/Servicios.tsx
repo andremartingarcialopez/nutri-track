@@ -16,7 +16,7 @@ const services = [
 export default function Servicios() {
     return (
         <>
-            <h2 className="text-center lg:text-start text-5xl font-semibold my-5">Servicios</h2>
+            <h2 className="text-center lg:text-start text-3xl md:text-5xl font-semibold my-5">Servicios</h2>
 
             <div className="lg:grid grid-cols-3 gap-10">
                 {services.map(function (service) {
@@ -28,7 +28,7 @@ export default function Servicios() {
                                     `url(${service.image})`,
                             }}>
                             <div className=" h-full flex justify-center items-center bg-black/30">
-                                <h2 className="text-white text-2xl p-2 font-bold text-center">{service.title}</h2>
+                                <h2 className="text-white text-xl md:text-2xl p-2 font-bold text-center">{service.title}</h2>
                             </div>
                         </div>
                     )

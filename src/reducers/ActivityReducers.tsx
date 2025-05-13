@@ -62,6 +62,11 @@ export function activityReducers(state: InitialStateType = initialState, action:
     }
 
     if (action.type == "reset-app") {
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Esto hace que el scroll sea animado
+          });
         
         return{
             activities: [], id: ""

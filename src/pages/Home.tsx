@@ -31,7 +31,7 @@ export default function Home() {
                     <h2 className="text-white text-4xl md:text-5xl text-center font-light leading-15 ">El Asesoramiento Nutricional Mas Confiable De La Ciudad</h2>
 
 
-                    <Link to="/caloriestracker" className="mt-15 text-2xl  px-8 py-2 text-white cursor-pointer hover:font-semibold hover:bg-white/30  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 text-center ">Comieza a Contar tus Calorias</Link>
+                    <Link to="/caloriestracker" className="mt-15 text-xl md:text-2xl px-8 py-2 text-white cursor-pointer hover:font-semibold hover:bg-white/30  rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100 text-center ">Comieza a Contar tus Calorias</Link>
 
                 </div>
 

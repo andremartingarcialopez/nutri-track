@@ -9,7 +9,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-5">
-          <h2 className="text-3xl text-center font-semibold">Datos De Contacto</h2>
+          <h2 className="text-2xl md:text-3xl text-center font-semibold">Datos De Contacto</h2>
 
           <div className="mx-3 h-[20rem] flex flex-col justify-around items-start font-bold bg-amber-200/50 rounded-2xl p-5 my-5">
             <p className="flex flex-col justify-center items-center w-full">Correo Electronico: <span className="font-normal text-center">nutritrack@correo.com</span></p>
