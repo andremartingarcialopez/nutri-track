@@ -1,11 +1,11 @@
 export type Activity = {
     id: string
-    category: number;
+    category: string;
     activityName: string;
     calories: number;
 }
 
 export type Categories = {
-    id: number;
+    id: string;
     categoryName: string;
 }

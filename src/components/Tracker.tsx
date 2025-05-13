@@ -7,11 +7,11 @@ type TrackerProps = {
 export default function Tracker({ state }: TrackerProps) {
 
     function consumedCalories() {
-        return state.activities.reduce((total, acttivity) => acttivity.category == 1 ? total = total + acttivity.calories : total, 0)
+        return state.activities.reduce((total, acttivity) => acttivity.category == "1" ? total = total + acttivity.calories : total, 0)
     }
 
     function bornedCalories() {
-        return state.activities.reduce((total, acttivity) => acttivity.category == 2 ? total = total + acttivity.calories : total, 0)
+        return state.activities.reduce((total, acttivity) => acttivity.category == "2" ? total = total + acttivity.calories : total, 0)
     }
 
     const totalCalories = () => {
