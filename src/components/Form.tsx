@@ -39,7 +39,7 @@ export function Form({dispatch, state}: FormProps) {
     }
 
     function validateForm() {
-        if (activity.activityName == "" || activity.calories <= 0) {
+        if (activity.activityName == "" || activity.calories <= 0 || activity.category == "") {
             return true
         }else{
             return false

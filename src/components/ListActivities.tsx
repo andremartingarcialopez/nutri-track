@@ -21,8 +21,7 @@ export function ListActivities({ activities, dispatch }: ListActivitiesProps) {
     return (
         <>
 
-
-            {activities.length ? <h2 className="text-3xl font-bold text-center my-2 text-gray-600">Comidas y Actividades</h2> : <h2 className="text-xl md:text-3xl font-bold text-center my-2 text-gray-600">Nada Registrado</h2>}
+            {activities.length ? <h2 className="text-xl md:text-3xl font-bold text-center my-2 text-gray-600">Comidas y Actividades</h2> : <h2 className="text-xl md:text-3xl font-bold text-center my-2 text-gray-600">Nada Registrado</h2>}
             {activities.map(function (activity) {
                 return (
 
