@@ -25,7 +25,7 @@ export function ListActivities({ activities, dispatch }: ListActivitiesProps) {
             {activities.map(function (activity) {
                 return (
 
-                    <div key={activity.id} className="flex justify-between items-center border-t border-t-gray-700 py-4 px-10 mt-5">
+                    <div key={activity.id} className="flex justify-between items-center border-t mx-5 border-t-gray-700 py-4 px-10 mt-5">
                         <div>
                             <p className={`${activity.category == "1" ? `bg-yellow-500` : `bg-orange-500`} w-fit px-2 text-center py-1 font-semibold`}> {formartCategory(activity.category)} </p>
                             <p className="text-xl md:text-3xl font-black text-gray-700">{activity.activityName}</p>
